@@ -6,6 +6,8 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
+RUN npm ci && npm cache clean --force
+
 USER node
 
 RUN npm install
